@@ -2,8 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from App import iniciar_gestumotions
 
-idioma_seleccionado = tk.StringVar(value="Español")  # Valor por defecto
-
 def seleccionar_idioma(idioma):
     idioma_seleccionado.set(idioma)
 
@@ -11,10 +9,14 @@ def comenzar_app():
     ventana.destroy()
     iniciar_gestumotions(idioma_seleccionado.get())
 
+# Primero creamos la ventana principal
 ventana = tk.Tk()
 ventana.title("GestuMotions - Inicio")
 ventana.geometry("400x200")
 ventana.resizable(False, False)
+
+# Ahora sí podemos crear variables de Tkinter
+idioma_seleccionado = tk.StringVar(value="Español")  # Valor por defecto
 
 # Estilo
 style = ttk.Style()
