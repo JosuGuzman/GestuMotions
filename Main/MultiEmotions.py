@@ -1,35 +1,66 @@
-def traducir_emocion(emocion, idioma):
-    traducciones = {
-        "happy": {"Español": "Feliz", "Inglés": "Happy", "Euskera": "Pozik", "Chino": "高兴", "Francés": "Heureux"},
-        "sad": {"Español": "Triste", "Inglés": "Sad", "Euskera": "Triste", "Chino": "伤心", "Francés": "Triste"},
-        "angry": {"Español": "Enojado", "Inglés": "Angry", "Euskera": "Haserre", "Chino": "生气", "Francés": "Fâché"},
-        "surprise": {"Español": "Sorprendido", "Inglés": "Surprised", "Euskera": "Harrituta", "Chino": "惊讶", "Francés": "Surpris"},
-        "fear": {"Español": "Asustado", "Inglés": "Afraid", "Euskera": "Beldurtuta", "Chino": "害怕", "Francés": "Effrayé"},
-        "disgust": {"Español": "Disgustado", "Inglés": "Disgusted", "Euskera": "Nazkatuta", "Chino": "恶心", "Francés": "Dégoûté"},
-        "neutral": {"Español": "Neutral", "Inglés": "Neutral", "Euskera": "Neutrala", "Chino": "中性", "Francés": "Neutre"},
-    }
-    return traducciones.get(emocion, {}).get(idioma, emocion)
+import emoji
 
-def color_emocion(emocion):
-    colores = {
-        'happy':(255, 255, 0),
-        'sad': (92, 182, 255),
-        'angry': (255, 46, 46),
-        'surprise': (255, 174, 0),
-        'fear': (128, 0, 128),
-        'disgust': (0, 128, 0),
-        'neutral': (200, 200, 200)
+# Diccionario de traducciones
+traducciones = {
+    "es": {
+        "happy": "Feliz",
+        "sad": "Triste",
+        "angry": "Enojado",
+        "surprise": "Sorprendido",
+        "fear": "Miedo",
+        "disgust": "Asco",
+        "neutral": "Neutral",
+        "no_face": "¿Dónde estás? 🙈"
+    },
+    "en": {
+        "happy": "Happy",
+        "sad": "Sad",
+        "angry": "Angry",
+        "surprise": "Surprised",
+        "fear": "Fear",
+        "disgust": "Disgusted",
+        "neutral": "Neutral",
+        "no_face": "Where are you? 🙈"
+    },
+    "fr": {
+        "happy": "Heureux",
+        "sad": "Triste",
+        "angry": "En colère",
+        "surprise": "Surpris",
+        "fear": "Peur",
+        "disgust": "Dégoût",
+        "neutral": "Neutre",
+        "no_face": "Où es-tu ? 🙈"
+    },
+    "eu": {
+        "happy": "Pozik",
+        "sad": "Triste",
+        "angry": "Haserre",
+        "surprise": "Harridura",
+        "fear": "Beldurra",
+        "disgust": "Nazka",
+        "neutral": "Neutral",
+        "no_face": "Non zaude? 🙈"
+    },
+    "zh": {
+        "happy": "开心",
+        "sad": "伤心",
+        "angry": "生气",
+        "surprise": "惊讶",
+        "fear": "害怕",
+        "disgust": "厌恶",
+        "neutral": "中性",
+        "no_face": "你在哪？🙈"
     }
-    return colores.get(emocion, (0, 0, 0))
+}
 
-def emoji_emocion(emocion):
-    emojis = {
-        'happy': '😄',
-        'sad': '😢',
-        'angry': '😠',
-        'surprise': '😲',
-        'fear': '😱',
-        'disgust': '🤢',
-        'neutral': '😐'
-    }
-    return emojis.get(emocion, '')
+# Emojis para cada emoción
+emojis = {
+    'happy': emoji.emojize(":smiley:"), #
+    'sad': emoji.emojize(":cry:"), #
+    'angry': emoji.emojize(":angry_face:"), #😠
+    'surprise': emoji.emojize(":astonished_face:"), #😲
+    'fear': emoji.emojize(":fearful_face:"), #😱
+    'disgust': emoji.emojize(":nauseated_face:"), #🤢
+    'neutral': emoji.emojize(":neutral_face:") #😐
+}
